@@ -9,12 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: './dashboard/dashboard.module#DashboardPageModule'
+    loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule'
   },
-  {
-    path: 'settings',
-    loadChildren: './settings/settings.module#SettingsPageModule'
-  }
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({

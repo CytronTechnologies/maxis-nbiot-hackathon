@@ -14,12 +14,12 @@ export class AppComponent {
       title: 'Dashboard',
       url: '/dashboard',
       icon: 'ios-podium'
-    },
-    {
-      title: 'Settings',
-      url: '/settings',
-      icon: 'ios-construct'
     }
+    // {
+    //   title: 'Settings',
+    //   url: '/settings',
+    //   icon: 'ios-construct'
+    // }
   ];
 
   constructor(
