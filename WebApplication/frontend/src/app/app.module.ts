@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable, Inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -8,9 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { SOCKET_URL } from '../environments/environment';
-const config: SocketIoConfig = { url: SOCKET_URL, options: {} };
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { WINDOW_PROVIDERS } from '../window/provider';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +18,10 @@ const config: SocketIoConfig = { url: SOCKET_URL, options: {} };
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot({url: '', options: {}})
   ],
   providers: [
+    WINDOW_PROVIDERS, // <- add WINDOW_PROVIDERS here
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

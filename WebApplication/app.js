@@ -16,7 +16,7 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 
 app.use("*", function(req, res, next) {
-    res.sendFile(path.resolve('web/www/index.html'));  
+    res.sendFile(path.resolve('frontend/www/index.html'));  
 })
 
 // start azure
