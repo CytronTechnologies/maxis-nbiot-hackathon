@@ -9,7 +9,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'web', 'www')));
+app.use(express.static(path.join(__dirname, 'frontend', 'www')));
 
 // socket.io
 var server = require("http").Server(app);
