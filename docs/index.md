@@ -11,10 +11,10 @@ In the end of the workshop, you will learn how to:
 4. Create simple server and web application to view and monitor the activity of the sensors connected to Raspberry Pi.
 
 ## Courses:
-- [Microsoft Azure Basic Setup](../azure/index.md)
-- [Rasbperry Pi + Azure Integration](./send_telemetry_to_azure.md)
-- [Raspberry Pi + Grove Pi Setup](./grovepi.md)
-- [Raspberry Pi + NB-IoT Setup](./nbiot.md)
-- [Build Sensors Monitoring Web Application hosted at Azure Cloud]()
+- [Microsoft Azure Basic Setup](./azure/index.md)
+- [Rasbperry Pi + Azure Integration](./raspberrypi/send_telemetry_to_azure.md)
+- [Raspberry Pi + Grove Pi Setup](./raspberrypi/grovepi.md)
+- [Raspberry Pi + NB-IoT Setup](./raspberrypi/nbiot.md)
+- [Build Sensors Monitoring Web Application hosted at Azure Cloud](./web/node-red.md)
 
 
