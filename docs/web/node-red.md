@@ -1,5 +1,44 @@
 # IoT Web Application using Node Red
 
+## Running Node Red on local
+1. Node Red requires NodeJS installation. Refer [here](https://nodejs.org/en/) to install latest NodeJS package.
+
+2. In local terminal window, install Node Red.
+    ```c
+    npm install node-red --unsafe-perm
+    ```
+3. Run command `node-red` to start Node Red.
+
+4. If the output shows **Server now running at http://127.0.0.1:1880/**, navigate to 127.0.0.1:1880 in your web browser. You should be able to see Node Red webview.
+
+5. Press `Ctrl+C` in terminal window to close Node Red.
+
+## Design your Node Red Application
+
+In this application, we are going to learn to:
+- Run an application which reads telemetry of the device using Azure Node Red Library.
+- Send an email when alert is triggered.
+- Create a web UI view to display telemetry of the device.
+
+### Backend
+1.  Run command below to install azure-iot-hub module.
+    ```c
+    npm install -g node-red-contrib-azure-iot-hub
+    ```
+2. Start Node Red, usually: http://127.0.0.1:1880
+
+3.
+
+### Frontend
+1.
+2.
+3.
+
+### Challenges
+
+1. Store telemetry of the device to database.
+2. Create a web UI which shows the analytics.
+
 ## Running on Microsoft Azure
 
 ### Create base image
@@ -33,20 +72,24 @@ After a couple of minutes your instance will be running. In the console you can 
 
 3. Once logged in you need to install node.js and Node-RED.
 
-    ```
+    ```c
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     sudo apt-get install -y nodejs build-essential
     sudo npm install -g node-red
     ```
 
-4. At this point you can test your instance by running node-red. 
+4. At this point you can test your instance by running command below.
+    ```c
+    node-red
+    ```
+
     > Note: you may get some errors regarding the Serial node - that’s to be expected and can be ignored.
 
 5. Once started, you can access the editor at `http://<your-instance-ip>:1880/`.
 
 6. To get Node-RED to start automatically whenever your instance is restarted, you can use pm2:
 
-    ```
+    ```c
     sudo npm install -g pm2
     pm2 start `which node-red` -- -v
     pm2 save
@@ -54,10 +97,3 @@ After a couple of minutes your instance will be running. In the console you can 
     ```
 
 > For more information, please visit [https://nodered.org/docs/getting-started/azure](https://nodered.org/docs/getting-started/azure)
-
-
-## Design your Node Red Application
-
-### Backend
-
-### Frontend

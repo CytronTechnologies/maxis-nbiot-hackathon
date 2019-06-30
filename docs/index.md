@@ -17,4 +17,8 @@ In the end of the workshop, you will learn how to:
 - [Raspberry Pi + NB-IoT Setup](./raspberrypi/nbiot.md)
 - [Build Sensors Monitoring Web Application hosted at Azure Cloud](./web/node-red.md)
 
+## Downloads:
+- Related materials are at Github repo [https://github.com/CytronTechnologies/maxis-nbiot-hackathon](https://github.com/CytronTechnologies/maxis-nbiot-hackathon).
+- You can either `git clone` this repo or simply downloaded it.
+
 
