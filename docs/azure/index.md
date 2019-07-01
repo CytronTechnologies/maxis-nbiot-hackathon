@@ -17,15 +17,15 @@ To create and use Azure services, you will eventually need an account. Remember,
 
 4. Click the **Start free >** button. You'll be prompted to sign in with your Microsoft account. Sign in with your Microsoft credentials or create a new free Microsoft account.
 
-5. On the About you page, select your correct country or region, and then enter your first and last names, along with your email address and phone number. Depending on your country, you may see additional fields, such as a VAT number. Click Next to continue.
+5. On the **About you** page, select your correct country or region, and then enter your first and last names, along with your email address and phone number. Depending on your country, you may see additional fields, such as a VAT number. Click **Next** to continue.
 
-6. On the Identity verification by phone screen, select your country code, and type the number of a telephone to which you have immediate access.
+6. On the **Identity verification by phone** screen, select your country code, and type the number of a telephone to which you have immediate access.
 
-7. You have the option of text or callback to obtain a verification code. Click the relevant button, type the code in the Verification code box, and click Verify code.
+7. You have the option of text or callback to obtain a verification code. Click the relevant button, type the code in the **Verification code** box, and click **Verify code**.
 
-8. If the verification code is correct, you will now be asked to enter details of a valid credit card. Enter the card number, the expiration date, the CVV number, your name, and address, and click Next.
+8. If the verification code is correct, you will now be asked to enter details of a valid credit card. Enter the card number, the expiration date, the CVV number, your name, and address, and click **Next**.
 
-9. Finally, check the box to accept the subscription agreement, privacy statement, and communications policy. The second checkbox is optional. Now click Sign up.
+9. Finally, check the box to accept the subscription agreement, privacy statement, and communications policy. The second checkbox is optional. Now click **Sign up**.
 
 !!! info "Reference"
     For reference, please visit [Microsoft Documentation - Create an Azure account](https://docs.microsoft.com/en-us/learn/modules/create-an-azure-account/5-exercise-create-an-azure-account)
@@ -83,7 +83,7 @@ This section describes how to create an IoT hub using the [Azure portal](https:/
     For more references, please visit [Microsoft Documentations - Create an IoT hub using the Azure portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal).
 
 ### Register Iot Devices
-A device must be registered with your IoT hub before it can connect. In this quickstart, you can use local **Azure CLI** or **Azure Cloud Shell** to register a simulated device.
+A device must be registered with your IoT hub before it can connect. In this quickstart, you can use **local terminal** or **Azure Cloud Shell** to register a simulated device.
 
 1. Login to your Azure Account with command below.
     
@@ -101,7 +101,7 @@ A device must be registered with your IoT hub before it can connect. In this qui
 
     **NameOfYourDevice**: The name of the device you're registering. You can choose any name for your device. In following workshop, you will need to use the same device name throughout this article. You will also need to update the device name in the sample applications before you run them.
 
-3. Run the following commands in Azure Cloud Shell to get the _device connection string_ for the device you just registered:
+3. Run the following commands in local terminal or Azure Cloud Shell to get the _device connection string_ for the device you just registered:
 
     ```
     az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <NameOfYourDevice> --output table
@@ -206,7 +206,7 @@ In this workshop, we will be using **Python** as main language.
 ### Read telemetry from Cloud
 The IoT Hub CLI extension can connect to the service-side **Events** endpoint on your IoT Hub. The extension receives the device-to-cloud messages sent from your simulated device. An IoT Hub back-end application typically runs in the cloud to receive and process device-to-cloud messages.
 
-1. Run the following commands in Azure Cloud Shell, replacing `YourIoTHubName` with the name of your IoT hub:
+1. Run the following commands in local terminal or Azure Cloud Shell, replacing `YourIoTHubName` with the name of your IoT hub:
 
     ```
     az iot hub monitor-events --hub-name YourIoTHubName --device-id <NameOfYourDevice>

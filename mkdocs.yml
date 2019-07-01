@@ -16,8 +16,8 @@ theme:
   palette:
     primary: 'teal'
     accent: 'teal'
-  font:
-    text: 'Work Sans'
+  # font:
+  #   text: 'Work Sans'
   logo:
     icon: 'cloud'
 

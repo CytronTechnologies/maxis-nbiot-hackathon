@@ -25,13 +25,9 @@ In this application, we are going to learn to:
 - Send an email when alert is triggered.
 
 ### Read Telemetry from Azure IoT Hub
-1.  Run command below to install azure-iot-hub module.
-    
-    ```
-    npm install -g node-red-contrib-azure-iot-hub
-    ```
+1. Start Node Red, and browse to [http://127.0.0.1:1880](http://127.0.0.1:1880)
 
-2. Start Node Red, and browse to [http://127.0.0.1:1880](http://127.0.0.1:1880)
+2. Install `node-red-contrib-azure-iot-hub` via **Manage Palette**. Manage Palette can be found under dropdown menu from menu button at top right corner of browser window.
 
 3. From left pane of the browser window, scroll and search for **Azure IoT Hub Receiver** node under **Cloud** category, then drag it into the center of dashboard.
     
@@ -72,9 +68,19 @@ In this application, we are going to learn to:
 
 We are going to create 2 widgets which show temperature and humidity of the sensor.
 
+1. Install node-red-dashboard using **Manage Palette**.
+2. Create flows as shown below.
+
+
 ### Send an email when alert is triggered
 
-N/A
+Here we will be using **[SendDrid](https://sendgrid.com)** service to send email for alert notification. You can use other option like **Gmail** service.
+
+1. Install SendGrid node (node-red-contrib-sendgrid) using **Manage Palette** in Node-RED.
+2. Get API key from [SendGrid website](https://sendgrid.com/).
+3. Drag SendGrid node under Social category to dashboard.
+3. Double click on SendGrid node, fill in necessary info and paste the API key.
+4. Create flows as below.
 
 ### Challenges
 You can implement other features in this application.
@@ -83,20 +89,25 @@ You can implement other features in this application.
 2. Create a web UI which shows the analytics.
 3. .. and many more.
 
-You can look into [https://github.com/Azure/node-red-contrib-azure](https://github.com/Azure/node-red-contrib-azure) for more libraries and modules for Azure. It is up to your creativity.
+You can look into [https://github.com/Azure/node-red-contrib-azure](https://github.com/Azure/node-red-contrib-azure) for more libraries and modules for Azure. It is up to your creativity. The other libraries you may find useful for your application:
+
 - [Azure Blob Storage](https://github.com/Azure/node-red-contrib-azure/tree/master/blob-storage)
 
 - [Azure CosmosDB (formerly DocumentDB)]("https://github.com/Azure/node-red-contrib-azure/tree/master/documentdb)
 
 - [Azure Event Hub](https://github.com/Azure/node-red-contrib-azure/tree/master/event-hub)
 
-- [Azure IoT Hub](https://github.com/Azure/node-red-contrib-azure/tree/master/iot-hub)
-
 - [Azure SQL](https://github.com/Azure/node-red-contrib-azure/tree/master/sql)
 
 - [Azure Table Storage](https://github.com/Azure/node-red-contrib-azure/tree/master/table-storage)
 
+### Save your work!!!
+
+One thing Node Red is good is that you can export your work to a json string. So if next time you are building a new machine and set up fresh Node Red, you can paste the json string and you will get your developed application back.
+
 ## Deploy on Microsoft Azure
+
+Once we have done developing the application, it is time for us to deploy it to the cloud so we can view it anywhere as long as we have Internet.
 
 ### Create base image
 
