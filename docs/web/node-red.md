@@ -1,6 +1,6 @@
 # IoT Web Application using Node Red
 
-## Running Node Red on local
+## Running Node Red on your Local Machine
 1. Node Red requires NodeJS installation. Refer [here](https://nodejs.org/en/) to install latest NodeJS package.
 
 2. In local terminal window, install Node Red.
@@ -13,33 +13,76 @@
 
 5. Press `Ctrl+C` in terminal window to close Node Red.
 
+6. (Optional) By default, the Node-RED editor is not secured - anyone who can access its IP address can access the editor and deploy changes. This is only suitable if you are running on a trusted network. See [this](https://nodered.org/docs/user-guide/runtime/securing-node-red) guide to secure your Node-RED application.
+
 ## Design your Node Red Application
 
 In this application, we are going to learn to:
 - Run an application which reads telemetry of the device using Azure Node Red Library.
-- Send an email when alert is triggered.
 - Create a web UI view to display telemetry of the device.
+- Send an email when alert is triggered.
 
-### Backend
+#### 1. Read Telemetry from Azure IoT Hub
 1.  Run command below to install azure-iot-hub module.
     ```c
     npm install -g node-red-contrib-azure-iot-hub
     ```
-2. Start Node Red, usually: http://127.0.0.1:1880
+2. Start Node Red, and browse to http://127.0.0.1:1880
 
-3.
+3. From left pane of the browser window, scroll and search for **Azure IoT Hub Receiver** node under **Cloud** category, then drag it into the center of dashboard.
+    ![](media/azureiot-hub-receiver-node.png)
 
-### Frontend
-1.
-2.
-3.
+4. From the same left pane under **output** category, drag **debug** node to the dashboard. (It will be renamed as msg.payload once it is placed at dashboard)
+    ![](media/debug.png)
 
-### Challenges
+5. Link it to **Azure IoT Hub Receiver** node.
+    ![](media/azure-hub-receiver+debug.png)
+
+6. Double-click on the Azure IoT Hub Receiver node and enter your Iot Hub connectionString for your Azure IoT Hub and click Done.
+    ![](media/azureiot-hub-receiver-node.png)
+
+    ![](media/azureiot-hub-receiver-input.png)
+
+
+7. Click Deploy.
+    ![](media/deploy.png)
+
+8. You should see the below messages on your command line from where you are running NodeRED. The Azure IoT Hub Receiver node should now say 'Connected'.
+    ![](media/azureiot-hub-receiver-cmd_logs.png)
+
+    ![](media/azureiot-hub-receiver-node-connected.png)
+
+
+9. Once you have messages coming into your Azure IoT Hub, you should see them in the debug pane. The Azure IoT Hub Receiver node should now say 'Received'.
+    ![](media/azureiot-hub-receiver-node-received.png)
+    ![](media/azureiot-hub-receiver-output.png)
+
+#### 2. Create a Web UI to display device telemetry
+We are going to create 2 widgets which show temperature and humidity of the sensor.
+
+#### 3. Send an email when alert is triggered
+
+#### 4. Challenges
+You can implement other features in this application.
 
 1. Store telemetry of the device to database.
 2. Create a web UI which shows the analytics.
+3. .. and many more.
 
-## Running on Microsoft Azure
+You can look into [https://github.com/Azure/node-red-contrib-azure](https://github.com/Azure/node-red-contrib-azure) for more libraries and modules for Azure. It is up to your creativity.
+- [Azure Blob Storage](https://github.com/Azure/node-red-contrib-azure/tree/master/blob-storage)
+
+- [Azure CosmosDB (formerly DocumentDB)]("https://github.com/Azure/node-red-contrib-azure/tree/master/documentdb)
+
+- [Azure Event Hub](https://github.com/Azure/node-red-contrib-azure/tree/master/event-hub)
+
+- [Azure IoT Hub](https://github.com/Azure/node-red-contrib-azure/tree/master/iot-hub)
+
+- [Azure SQL](https://github.com/Azure/node-red-contrib-azure/tree/master/sql)
+
+- [Azure Table Storage](https://github.com/Azure/node-red-contrib-azure/tree/master/table-storage)
+
+## Deploy on Microsoft Azure
 
 ### Create base image
 
