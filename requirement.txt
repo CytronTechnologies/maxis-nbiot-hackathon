@@ -1,0 +1,5 @@
+pymdown-extensions
+pygments
+mkdocs-minify-plugin
+mkdocs-material
+mkdocs-pdf-export-plugin

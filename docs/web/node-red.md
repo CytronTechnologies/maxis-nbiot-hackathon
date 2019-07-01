@@ -4,9 +4,11 @@
 1. Node Red requires NodeJS installation. Refer [here](https://nodejs.org/en/) to install latest NodeJS package.
 
 2. In local terminal window, install Node Red.
-    ```c
+    
+    ```
     npm install node-red --unsafe-perm
     ```
+
 3. Run command `node-red` to start Node Red.
 
 4. If the output shows **Server now running at http://127.0.0.1:1880/**, navigate to 127.0.0.1:1880 in your web browser. You should be able to see Node Red webview.
@@ -22,23 +24,29 @@ In this application, we are going to learn to:
 - Create a web UI view to display telemetry of the device.
 - Send an email when alert is triggered.
 
-#### 1. Read Telemetry from Azure IoT Hub
+### Read Telemetry from Azure IoT Hub
 1.  Run command below to install azure-iot-hub module.
-    ```c
+    
+    ```
     npm install -g node-red-contrib-azure-iot-hub
     ```
-2. Start Node Red, and browse to http://127.0.0.1:1880
+
+2. Start Node Red, and browse to [http://127.0.0.1:1880](http://127.0.0.1:1880)
 
 3. From left pane of the browser window, scroll and search for **Azure IoT Hub Receiver** node under **Cloud** category, then drag it into the center of dashboard.
+    
     ![](media/azureiot-hub-receiver-node.png)
 
 4. From the same left pane under **output** category, drag **debug** node to the dashboard. (It will be renamed as msg.payload once it is placed at dashboard)
+    
     ![](media/debug.png)
 
 5. Link it to **Azure IoT Hub Receiver** node.
+    
     ![](media/azure-hub-receiver+debug.png)
 
 6. Double-click on the Azure IoT Hub Receiver node and enter your Iot Hub connectionString for your Azure IoT Hub and click Done.
+    
     ![](media/azureiot-hub-receiver-node.png)
 
     ![](media/azureiot-hub-receiver-input.png)
@@ -48,21 +56,27 @@ In this application, we are going to learn to:
     ![](media/deploy.png)
 
 8. You should see the below messages on your command line from where you are running NodeRED. The Azure IoT Hub Receiver node should now say 'Connected'.
+    
     ![](media/azureiot-hub-receiver-cmd_logs.png)
 
     ![](media/azureiot-hub-receiver-node-connected.png)
 
 
 9. Once you have messages coming into your Azure IoT Hub, you should see them in the debug pane. The Azure IoT Hub Receiver node should now say 'Received'.
+    
     ![](media/azureiot-hub-receiver-node-received.png)
+    
     ![](media/azureiot-hub-receiver-output.png)
 
-#### 2. Create a Web UI to display device telemetry
+### Create a Web UI to display device telemetry
+
 We are going to create 2 widgets which show temperature and humidity of the sensor.
 
-#### 3. Send an email when alert is triggered
+### Send an email when alert is triggered
 
-#### 4. Challenges
+N/A
+
+### Challenges
 You can implement other features in this application.
 
 1. Store telemetry of the device to database.
@@ -115,28 +129,31 @@ After a couple of minutes your instance will be running. In the console you can 
 
 3. Once logged in you need to install node.js and Node-RED.
 
-    ```c
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-    sudo apt-get install -y nodejs build-essential
-    sudo npm install -g node-red
+    ```
+    $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs build-essential
+    $ sudo npm install -g node-red
     ```
 
 4. At this point you can test your instance by running command below.
-    ```c
+    
+    ```
     node-red
     ```
 
-    > Note: you may get some errors regarding the Serial node - that’s to be expected and can be ignored.
+    !!! info "Note"
+        You may get some errors regarding the Serial node - that’s to be expected and can be ignored.
 
 5. Once started, you can access the editor at `http://<your-instance-ip>:1880/`.
 
 6. To get Node-RED to start automatically whenever your instance is restarted, you can use pm2:
 
-    ```c
+    ```
     sudo npm install -g pm2
     pm2 start `which node-red` -- -v
     pm2 save
     pm2 startup
     ```
-
-> For more information, please visit [https://nodered.org/docs/getting-started/azure](https://nodered.org/docs/getting-started/azure)
+    
+### References
+For more information, please visit [https://nodered.org/docs/getting-started/azure](https://nodered.org/docs/getting-started/azure)

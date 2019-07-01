@@ -6,7 +6,8 @@ for the Azure CLI. This package has been tested with and is supported for:
 * Ubuntu trusty, xenial, artful, bionic, and disco
 * Debian wheezy, jessie, and stretch
 
-> The package for Azure CLI installs its own Python interpreter, and does not use the system Python.
+!!! info "Note"
+    The package for Azure CLI installs its own Python interpreter, and does not use the system Python.
 
 ## Install
 
@@ -18,13 +19,16 @@ runs the install commands for you, and instructions that you can run as a step-b
 We offer and maintain a script which runs all of the installation commands in one step. Run it by using `curl`
 and pipe directly to `bash`, or download the script to a file and inspect it before running.
 
-> This script is only verified for Ubuntu 16.04+ and Debian 8+. It may not work on other distributions.
-> If you're using a derived distribution such as Linux Mint, follow the manual install instructions and perform
-> any necessary troubleshooting.
-
 ```bash
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ```
+
+!!! info "Note"
+    This script is only verified for Ubuntu 16.04+ and Debian 8+. It may not work on other distributions.
+    If you're using a derived distribution such as Linux Mint, follow the manual install instructions and perform
+    any necessary troubleshooting.
+
+
 
 ### Manual install instructions
 
@@ -32,30 +36,30 @@ If you don't want to run a script as superuser, follow these manual steps to ins
 
 1. Get packages needed for the install process:
 
-    ```bash
+    ```
     sudo apt-get update
     sudo apt-get install curl apt-transport-https lsb-release gnupg
     ```
 
 2. Download and install the Microsoft signing key:
 
-    ```bash
+    ```
     curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
-        gpg --dearmor | \
-        sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+    gpg --dearmor | \
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
     ```
 
 3. <div id="set-release"/>Add the Azure CLI software repository:
 
-    ```bash
+    ```
     AZ_REPO=$(lsb_release -cs)
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
 4. Update repository information and install the `azure-cli` package:
 
-    ```bash
+    ```
     sudo apt-get update
     sudo apt-get install azure-cli
     ```
@@ -100,7 +104,8 @@ export HTTP_PROXY=http://[username]:[password]@[proxy]:[port]
 export HTTPS_PROXY=https://[username]:[password]@[proxy]:[port]
 ```
 
-> If you are behind a proxy, these shell variables must be set to connect to Azure services with the CLI. If you are not using basic auth, it's recommended to export these variables in your .bashrc file. Always follow your business' security policies and the requirements of your system administrator.
+!!! info "Note"
+    If you are behind a proxy, these shell variables must be set to connect to Azure services with the CLI. If you are not using basic auth, it's recommended to export these variables in your .bashrc file. Always follow your business' security policies and the requirements of your system administrator.
 
 You may also want to explicitly configure `apt` to use this proxy at all times. Make sure that the
 following lines appear in an `apt` configuration file in `/etc/apt/apt.conf.d/`. We recommend using
@@ -122,7 +127,7 @@ If your proxy does not use basic auth, __remove__ the `[username]:[password]@` p
 In order to get the Microsoft signing key and get the package from our repository, your proxy needs to
 allow HTTPS connections to the following address:
 
-* `https://packages.microsoft.com`
+[https://packages.microsoft.com](https://packages.microsoft.com)
 
 ### CLI fails to install or run on Windows Subsystem for Linux
 
@@ -150,41 +155,43 @@ If you continue to have issues installing or running on WSL, consider [installin
 
 Use `apt-get upgrade` to update the CLI package.
 
-   ```bash
-   sudo apt-get update && sudo apt-get upgrade
-   ```
+```
+sudo apt-get update && sudo apt-get upgrade
+```
 
-> This command upgrades all of the installed packages on your system that have not had a dependency change.
-> To upgrade the CLI only, use `apt-get install`.
-> 
-> ```bash
-> sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
-> ```
+!!! info "Note"
+    This command upgrades all of the installed packages on your system that have not had a dependency change.
+    To upgrade the CLI only, use `apt-get install`.
+
+    ```
+    sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+    ```
 
 ## Uninstall
 
 1. Uninstall with `apt-get remove`:
 
-    ```bash
+    ```
     sudo apt-get remove -y azure-cli
     ```
 
 2. If you don't plan to reinstall the CLI, remove the Azure CLI repository information:
 
-   ```bash
-   sudo rm /etc/apt/sources.list.d/azure-cli.list
-   ```
+    ```
+    sudo rm /etc/apt/sources.list.d/azure-cli.list
+    ```
 
 3. Remove the signing key:
 
-    ```bash
+    ```
     sudo rm /etc/apt/trusted.gpg.d/microsoft.asc.gpg
     ```
 
 4. Remove any unneeded packages:
 
-   ```bash
-   sudo apt autoremove
-   ```
+    ```
+    sudo apt autoremove
+    ```
 
-> For more references, please refer to [Microsoft Documentation - Install Azure CLI with apt](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt)
+!!! info "References"
+    For more references, please refer to [Microsoft Documentation - Install Azure CLI with apt](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt)
