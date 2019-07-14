@@ -44,7 +44,7 @@ The Azure command-line interface (CLI) is Microsoft's cross-platform command-lin
     For more references, please visit [Microsoft Documentations - Overview of Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
 
 
-### Create Iot Hub
+### Create IoT Hub
 This section describes how to create an IoT hub using the [Azure portal](https://portal.azure.com).
 
 1. Log in to the [Azure portal](https://portal.azure.com). 
