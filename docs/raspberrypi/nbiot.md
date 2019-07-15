@@ -10,7 +10,7 @@ AT command test is basic step to check if NB-IoT is working in good condition.
 
 ### Steps
 
-1. Plug the NB-IoT HAT into Raspberry Pi Board using USB.
+1. Insert and lock the NB-IoT SIM card into NB-IoT HAT. Connect the NB-IoT HAT to Raspberry Pi Board via USB cable.
 
 2. Run the command below on Raspberry Pi to check availability of HAT. It will show /dev/ttyUSB2 if it exists.
     
