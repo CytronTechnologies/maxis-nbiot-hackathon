@@ -10,7 +10,8 @@ AT command test is basic step to check if NB-IoT is working in good condition.
 
 ### Steps
 
-1. Insert and lock the NB-IoT SIM card into NB-IoT HAT. Connect the NB-IoT HAT to Raspberry Pi Board via USB cable.
+1. Insert and lock the NB-IoT SIM card onto NB-IoT HAT (Back). Connect the NB-IoT HAT to Raspberry Pi Board via USB cable.
+![NB-IoT HAT with Raspberry Pi](./media/RPi-NB-IoT-HAT.jpg)
 
 2. Run the command below on Raspberry Pi to check availability of HAT. It will show /dev/ttyUSB2 if it exists.
     
@@ -44,8 +45,8 @@ AT command test is basic step to check if NB-IoT is working in good condition.
     # check firmware version, make sure it contains SIM7000E
     -> AT+GSV
     SIMCOM_Ltd
-    SIMCOM_SIM7000C
-    Revision:1351B06SIM7000C
+    SIMCOM_SIM7000E
+    Revision:1351B06SIM7000E
 
     # check service, result might be different
     -> AT+CPSI?
@@ -115,7 +116,8 @@ NB-IoT HAT offers PPP (Point-to-Point Protocol) for us to connect Raspberry Pi t
 
 ### Steps
 
-1. Plug the NB-IoT HAT into Raspberry Pi Board using USB
+1. Plug the NB-IoT HAT into Raspberry Pi Board using USB. Ensure the Maxis SIM card is inserted and secured on the HAT.
+![NB-IoT HAT with Raspberry Pi](./media/RPi-NB-IoT-HAT.jpg)
 
 2. Run the command below on Raspberry Pi to check availability of HAT. It will show /dev/ttyUSB2 if it exists.
 
