@@ -20,6 +20,7 @@ Right now we can send those values from actual hardware DHT11 Temperature & Humi
 ### Steps
 
 1. Plug the Grove Pi HAT onto Raspberry Pi.
+ (./media/RPi with GrovePi+.jpg)
 2. Plug the DHT11 Sensor (Blue color) to port D4 on GrovePi.
 3. Create a python script called dht.py.
 4. Copy the following content into dht.py.
