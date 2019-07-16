@@ -37,7 +37,7 @@ We will be using Raspberry Pi to send simulated temperature and humidity telemet
 4. Make sure Boost Library is installed.
     
     ```
-    apt-get install libboost-python-dev
+    sudo apt-get install libboost-python-dev
     ```
 
 5. Navigate to the root folder of the downloaded sample Python project. Then navigate to the **iot-hub\Quickstarts\simulated-device** folder.
@@ -49,13 +49,13 @@ We will be using Raspberry Pi to send simulated temperature and humidity telemet
 7. In the local terminal window, run the following commands to install the required libraries for the simulated device application:
 
     ```
-    pip install azure-iothub-device-client
+    sudo pip install azure-iothub-device-client
     ```
 
 7. In the local terminal window, run the following commands to run the simulated device application:
 
     ```
-    python SimulatedDevice.py
+    sudo python SimulatedDevice.py
     ```
 
     !!! warning "Troubleshoot"
@@ -66,5 +66,5 @@ We will be using Raspberry Pi to send simulated temperature and humidity telemet
         2. Check that you have the right version of C++ runtime  [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads). (We recommend the latest).
         3. Verify that you have installed the iothub client: 
         ```
-        pip install azure-iothub-device-client
+        sudo pip install azure-iothub-device-client
         ```

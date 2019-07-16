@@ -1,4 +1,4 @@
-# Maxis NB-IoT Hackathon Workshop
+# Maxis NB-IoT Challenge Workshop
 
 In the end of the workshop, you will learn how to:
 
