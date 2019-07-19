@@ -172,22 +172,53 @@ In this workshop, we will be using **Python** as main language.
     brew install boost
     ```
 
+    Python2:
+
+    ```
+    brew install boost-python
+    ```
+
+    Python3:
+
+    ```
+    brew install boost-python3
+    ```
+
 4. Navigate to the root folder of the downloaded sample Python project. Then navigate to the **iot-hub\Quickstarts\simulated-device** folder.
 
 5. Open the **SimulatedDevice.py** file in a text editor of your choice.
 
     Replace the value of the `CONNECTION_STRING` variable with the device connection string you made a note of previously. Then save your changes to **SimulatedDevice.py** file.
 
+    !!! info "Note"
+        Make a note of the device connection string, which looks like `HostName=<YourIoTHubName>.azure-devices.net;DeviceId=<NameOfYourDevice>;SharedAccessKey={YourSharedAccessKey}`.
+
 6. In the local terminal window, run the following commands to install the required libraries for the simulated device application:
+
+    Python2:
 
     ``` python
     pip install azure-iothub-device-client
+    ```
+
+    Python3:
+
+    ``` python
+    pip3 install azure-iothub-device-client
     ```   
 
 7. In the local terminal window, run the following commands to run the simulated device application:
 
-    ```
+    Python2:
+
+    ``` python
     python SimulatedDevice.py
+    ```
+
+    Python3:
+
+    ``` python
+    python3 SimulatedDevice.py
     ```
 
     The following screenshot shows the output as the simulated device application sends telemetry to your IoT hub:

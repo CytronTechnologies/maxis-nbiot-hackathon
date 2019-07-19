@@ -2,12 +2,24 @@ import serial, sys
 from time import sleep
 from micropyGPS import MicropyGPS
 
+NMEA_PORT='/dev/ttyUSB1'
+AT_PORT='/dev/ttyUSB2'
+
+def initGNSS():
+    sys.stdout.write('Init GNSS\n')
+    with serial.Serial(AT_PORT, 115200, timeout=5, rtscts=True, dsrdtr=True) as ser:
+        ser.write("AT+CGNSCFG=1\r\n".encode())
+        sleep(1)
+        ser.write("AT+CGNSPWR=1\r\n".encode())
+        sleep(1)
+
 try:
-    sys.stdout.write('Started gps reader\n')
+    sys.stdout.write('Started GNSS reader\n')
     reader = MicropyGPS()
+    initGNSS()
     while True:
         try:
-            with serial.Serial('/dev/ttyUSB1', 115200, timeout=5, rtscts=True, dsrdtr=True) as ser:
+            with serial.Serial(NMEA_PORT, 115200, timeout=5, rtscts=True, dsrdtr=True) as ser:
                 for i in range(10):
                     # ignore these sentences
                     ser.readline()
@@ -20,4 +32,4 @@ try:
             print("Error: {}".format(str(e)))
             sleep(1)
 except KeyboardInterrupt:
-    sys.stderr.write('Ctrl-C pressed, exiting gps reader\n')
+    sys.stderr.write('Ctrl-C pressed, exiting GNSS reader\n')

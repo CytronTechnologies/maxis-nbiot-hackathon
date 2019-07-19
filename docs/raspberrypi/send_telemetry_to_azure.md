@@ -24,20 +24,22 @@ We will be using Raspberry Pi to send simulated temperature and humidity telemet
 
     ```
     sudo apt-get install python
+    sudo apt-get install python-dev
     ```
     
     Python3:
 
     ```
     sudo apt-get install python3
+    sudo apt-get install python3-dev
     ```
 
-3. Download the sample Python project from https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip and extract the ZIP archive.
+3. Download the sample Python project from [https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip](https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip) and extract the ZIP archive.
 
-4. Make sure Boost Library is installed.
+4. Make sure Boost Library and OpenSSL library are installed.
     
     ```
-    sudo apt-get install libboost-python-dev
+    sudo apt-get install libboost-python-dev libcurl4-openssl-dev
     ```
 
 5. Navigate to the root folder of the downloaded sample Python project. Then navigate to the **iot-hub\Quickstarts\simulated-device** folder.
@@ -46,16 +48,35 @@ We will be using Raspberry Pi to send simulated temperature and humidity telemet
 
     Replace the value of the `CONNECTION_STRING` variable with the device connection string you made a note of previously. Then save your changes to **SimulatedDevice.py** file.
 
+    !!! info "Note"
+        Make a note of the device connection string, which looks like `HostName=<YourIoTHubName>.azure-devices.net;DeviceId=<NameOfYourDevice>;SharedAccessKey={YourSharedAccessKey}`.
+
 7. In the local terminal window, run the following commands to install the required libraries for the simulated device application:
+
+    Python2:
 
     ```
     sudo pip install azure-iothub-device-client
     ```
 
+    Python3:
+
+    ```
+    sudo pip3 install azure-iothub-device-client
+    ```
+
 7. In the local terminal window, run the following commands to run the simulated device application:
+
+    Python2:
 
     ```
     sudo python SimulatedDevice.py
+    ```
+
+    Python3:
+
+    ```
+    sudo python3 SimulatedDevice.py
     ```
 
     !!! warning "Troubleshoot"

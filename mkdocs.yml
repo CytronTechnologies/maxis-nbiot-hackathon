@@ -2,12 +2,16 @@ site_name: Maxis NB-IoT Challenge Workshop
 repo_url: https://github.com/CytronTechnologies/maxis-nbiot-hackathon
 nav:
     - Home: index.md
-    - Azure: azure/index.md
+    - Azure: 
+        - Getting Started: azure/index.md
+        - Azure CLI Installation on Linux: azure/install-azure-cli-apt.md
+        - Azure CLI Installation on MacOS: azure/install-azure-cli-macos.md
     - Raspberry Pi:
         - Getting Started: raspberrypi/getting-started.md
         - Grove Pi: raspberrypi/grovepi.md
         - Testing NB-IoT HAT: raspberrypi/nbiot.md
         - Send data to Azure: raspberrypi/send_telemetry_to_azure.md
+        - GNSS: raspberrypi/gnss.md
     - Web:
         - Node Red: web/node-red.md
         - Express JS + Ionic : web/expressjs_ionic.md

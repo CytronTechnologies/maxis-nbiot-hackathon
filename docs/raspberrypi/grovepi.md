@@ -8,8 +8,14 @@ The GrovePi can be programmed in **Python**, **C**, **C#**, **Go**, and **NodeJS
 ## Install Grove Pi Python
 ```c
 $ sudo curl -kL dexterindustries.com/update_grovepi | bash
-$ sudo pip install grovepi
 $ sudo reboot
+```
+
+## Firmware Update (Important)
+```c
+$ cd Dexter/Firmware
+$ sudo chmod +x firmware_update.sh
+$ sudo bash firmware_update.sh
 ```
 
 ## Getting started with Example DHT Temperature & Humidity Sensor
@@ -30,6 +36,7 @@ Right now we can send those values from actual hardware DHT11 Temperature & Humi
 
 import grovepi
 import math
+from time import sleep
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
@@ -40,16 +47,21 @@ sensor = 4  # The Sensor goes on digital port 4.
 blue = 0    # The Blue colored sensor.
 white = 1   # The White colored sensor.
 
-while True:
-    try:
-        # This example uses the blue colored sensor. 
-        # The first parameter is the port, the second parameter is the type of sensor.
-        [temp,humidity] = grovepi.dht(sensor,blue)  
-        if math.isnan(temp) == False and math.isnan(humidity) == False:
-            print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+try:
+    while True:
+        try:
+            # This example uses the blue colored sensor. 
+            # The first parameter is the port, the second parameter is the type of sensor.
+            [temp,humidity] = grovepi.dht(sensor,blue)  
+            if math.isnan(temp) == False and math.isnan(humidity) == False:
+                print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+            sleep(1)
 
-    except IOError:
-        print ("Error")
+        except IOError:
+            print ("Error")
+
+except KeyboardInterrupt:
+    print ("Pressed Ctrl+C. Exiting now..")
 ```
 
 5. Run command `python dht.py` to run the program.
