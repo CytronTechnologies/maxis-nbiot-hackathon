@@ -136,8 +136,8 @@ NB-IoT HAT offers PPP (Point-to-Point Protocol) for us to connect Raspberry Pi t
     ```
     $ sudo su
     $ cd "Raspberry Pi/PPP Installer"
-    $ chmod +x install-ppp.sh
-    $ ./install-ppp.sh
+    $ chmod +x install.sh
+    $ ./install.sh
     ```
 
 5. Run command below to start the connection. 

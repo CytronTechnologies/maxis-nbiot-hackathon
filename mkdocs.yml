@@ -4,6 +4,7 @@ nav:
     - Home: index.md
     - Azure: azure/index.md
     - Raspberry Pi:
+        - Getting Started: raspberrypi/getting-started.md
         - Grove Pi: raspberrypi/grovepi.md
         - Testing NB-IoT HAT: raspberrypi/nbiot.md
         - Send data to Azure: raspberrypi/send_telemetry_to_azure.md
@@ -31,7 +32,8 @@ markdown_extensions:
 
 plugins:
   - search
-  #- pdf-export
+  - pdf-export:
+      combined: true
   - minify:
       minify_html: true
   
