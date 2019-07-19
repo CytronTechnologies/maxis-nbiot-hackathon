@@ -73,32 +73,4 @@ $ ./install.sh
 </pre></div> </li> <li> <p>Run command below to start the connection. </p> <div class=codehilite><pre><span></span>pon
 </pre></div> </li> <li> <p>Run command below to check if interface ppp0 exists.</p> <div class=codehilite><pre><span></span>ifconfig
 </pre></div> </li> <li> <p>If it is successful, you should see IP exists in interface ppp0 from <code>ifconfig</code> command.</p> </li> <li> <p>Run command below to stop the connection. </p> <div class=codehilite><pre><span></span>poff
-</pre></div> </li> <li> <p>Automate the connection during Raspberry Pi boot-up.</p> <ul> <li>Run command <code>nano /etc/rc.local</code> to start edit file.</li> <li>Insert 2 lines before line <code>exit 0</code> in file</li> </ul> <div class=codehilite><pre><span></span>...
-<span class=hll>sleep 5
-</span><span class=hll>sudo pon &amp;
-</span>
-exit 0
-</pre></div> </li> <li> <p>Final script will be similiar as below:</p> <div class=codehilite><pre><span></span>#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-
-# Print the IP address
-_IP=$(hostname -I) || true
-if [ "$_IP" ]; then
-    printf "My IP address is %s\n" "$_IP"
-fi
-
-<span class=hll>sleep 5
-</span><span class=hll>sudo pon &amp;
-</span>
-exit 0
-</pre></div> </li> <li> <p>Make sure you have turned off WiFi or unplug Ethernet to make sure Raspberry Pi will use PPP in next bootup.</p> </li> <li> <p>Reboot Rapsberry Pi for step 9 to take effect.</p> </li> </ol> <h3 id=references>References<a class=headerlink href=#references title="Permanent link">¶</a></h3> <p>For more references, please visit https://www.rhydolabz.com/wiki/?p=16325</p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid"> <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href=../grovepi/ rel=prev title="Grove Pi"> <div class="md-flex__cell md-flex__cell--shrink"> <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i> </div> <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"> <span class=md-flex__ellipsis> <span class=md-footer-nav__direction> Previous </span> Grove Pi </span> </div> </a> <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href=../send_telemetry_to_azure/ rel=next title="Send data to Azure"> <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"> <span class=md-flex__ellipsis> <span class=md-footer-nav__direction> Next </span> Send data to Azure </span> </div> <div class="md-flex__cell md-flex__cell--shrink"> <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> powered by <a href=https://www.mkdocs.org>MkDocs</a> and <a href=https://squidfunk.github.io/mkdocs-material/ > Material for MkDocs</a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/application.245445c6.js></script> <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script> </body> </html>
+</pre></div> </li> <li> <p>Automate the connection during Raspberry Pi boot-up.</p> <ul> <li>Run command <code>systemctl enable nbiot.service</code>.</li> </ul> </li> </ol> <h3 id=references>References<a class=headerlink href=#references title="Permanent link">¶</a></h3> <p>For more references, please visit https://www.rhydolabz.com/wiki/?p=16325</p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid"> <a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href=../grovepi/ rel=prev title="Grove Pi"> <div class="md-flex__cell md-flex__cell--shrink"> <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i> </div> <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"> <span class=md-flex__ellipsis> <span class=md-footer-nav__direction> Previous </span> Grove Pi </span> </div> </a> <a class="md-flex md-footer-nav__link md-footer-nav__link--next" href=../send_telemetry_to_azure/ rel=next title="Send data to Azure"> <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"> <span class=md-flex__ellipsis> <span class=md-footer-nav__direction> Next </span> Send data to Azure </span> </div> <div class="md-flex__cell md-flex__cell--shrink"> <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> powered by <a href=https://www.mkdocs.org>MkDocs</a> and <a href=https://squidfunk.github.io/mkdocs-material/ > Material for MkDocs</a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/application.245445c6.js></script> <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script> </body> </html>
