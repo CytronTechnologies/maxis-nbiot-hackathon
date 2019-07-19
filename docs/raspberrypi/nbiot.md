@@ -161,49 +161,7 @@ NB-IoT HAT offers PPP (Point-to-Point Protocol) for us to connect Raspberry Pi t
     ``` 
 
 9. Automate the connection during Raspberry Pi boot-up.
-    - Run command `nano /etc/rc.local` to start edit file.
-    - Insert 2 lines before line `exit 0` in file
-
-    ``` hl_lines="2 3"
-    ...
-    sleep 5
-    sudo pon &
-
-    exit 0
-
-    ```
-
-10. Final script will be similiar as below:
-
-    ``` hl_lines="20 21"
-    #!/bin/sh -e
-    #
-    # rc.local
-    #
-    # This script is executed at the end of each multiuser runlevel.
-    # Make sure that the script will "exit 0" on success or any other
-    # value on error.
-    #
-    # In order to enable or disable this script just change the execution
-    # bits.
-    #
-    # By default this script does nothing.
-
-    # Print the IP address
-    _IP=$(hostname -I) || true
-    if [ "$_IP" ]; then
-        printf "My IP address is %s\n" "$_IP"
-    fi
-
-    sleep 5
-    sudo pon &
-
-    exit 0
-    ```
-
-11. Make sure you have turned off WiFi or unplug Ethernet to make sure Raspberry Pi will use PPP in next bootup.
-
-12. Reboot Rapsberry Pi for step 9 to take effect.
+    - Run command `systemctl enable nbiot.service`.
 
 
 ### References
