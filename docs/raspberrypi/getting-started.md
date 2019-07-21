@@ -14,7 +14,7 @@ First of all, we will need IP address of Raspberry Pi. Power up your Raspberry P
 3. Enter Raspberry Pi IP Address and Press Enter Button.
     ![VNC Viewer](./media/vnc_1.png)
 
-4. Enter username and password for Raspberry Pi.
+4. Enter username and password for Raspberry Pi. By default, username is `pi` and password is `raspberry`.
     ![VNC Viewer](./media/vnc_2.png)
 
 5. Viola! Now you can access to Rasberry Pi remotely.
@@ -26,8 +26,12 @@ First of all, we will need IP address of Raspberry Pi. Power up your Raspberry P
     2. Open downloaded Putty.exe.
     3. Select SSH and enter your Raspberry Pi IP Address.
     ![SSH](./media/putty-windows.png)
+    4. Press `Open` button to open SSH Terminal.
+    5. When `login as` appears, enter `pi`, we are going to login as pi.
+    6. By default the password is `raspberry`.
 
 
 - Mac OS, Linux
     - Run command `ssh pi@<youripaddress>` in local terminal.
     ![SSH](./media/ssh_mac.png)
+    - Enter password `raspberry`.
