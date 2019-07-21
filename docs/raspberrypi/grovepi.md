@@ -5,7 +5,7 @@ This course explains how to use Grove Pi HAT with Rasbperry Pi to interface, con
 The GrovePi can be programmed in **Python**, **C**, **C#**, **Go**, and **NodeJS** on the Raspberry Pi. We will be using **Python** as main language for the course.
 
 
-## Install Grove Pi Python
+## Install Grove Pi Python (Important)
 ```c
 $ sudo curl -kL dexterindustries.com/update_grovepi | bash
 $ sudo reboot
@@ -64,8 +64,27 @@ except KeyboardInterrupt:
     print ("Pressed Ctrl+C. Exiting now..")
 ```
 
-5. Run command `python dht.py` to run the program.
+5. Run command `sudo python dht.py` to run the program.
 6. If the setup is correct, we will see temperature and humidity values are showing up.
+
+    !!! info "Important"
+        We have discovered that to make the script to run properly, step [Install Grove Pi Python](#install-grove-pi-python-important) and [Firmware Update](#firmware-update-important) must be completed at least once to install proper GrovePi Library. Install GrovePi Library using `pip install` or `pip3 install` will cause the script not to run properly.
+
+### Alternative
+
+If the script above does not run nicely as expected, you can consider following steps. 
+
+1. Plug the Grove Pi HAT onto Raspberry Pi.
+2. Plug the DHT11 Sensor (Blue color) to port D4 on GrovePi.
+3. Run the command below to run example DHT11 sensor script.
+```
+$ cd /home/pi/Dexter/GrovePi/Software/Python
+$ sudo python grove_dht_pro.py
+```
+
+!!! info "Important"
+    For this alternative, every time you created a new script, the file `grovepi.py` must be alongside with your created script. The file can be found at the same folder as the file `grove_dht_pro.py`.
+
 
 ## References
 1. For more examples, you can visit [https://github.com/DexterInd/GrovePi/tree/master/Software/Python](https://github.com/DexterInd/GrovePi/tree/master/Software/Python)

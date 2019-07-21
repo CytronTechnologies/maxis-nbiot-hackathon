@@ -1,4 +1,5 @@
 site_name: Maxis NB-IoT Challenge Workshop
+site_url: https://cytrontechnologies.github.io/maxis-nbiot-hackathon
 repo_url: https://github.com/CytronTechnologies/maxis-nbiot-hackathon
 nav:
     - Home: index.md
@@ -40,4 +41,7 @@ plugins:
       combined: true
   - minify:
       minify_html: true
+
+extra:
+  disqus: 'maxischallenge'
   
