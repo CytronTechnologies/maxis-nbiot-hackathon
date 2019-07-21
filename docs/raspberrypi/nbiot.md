@@ -103,7 +103,7 @@ AT command test is basic step to check if NB-IoT is working in good condition.
 
   7. Run `Ctrl-a` then `Ctrl-d` to minimise the screen. To Resume the screen run `screen -r`.
 
-  8. Run `Ctrl-a` then type: `:quit` to quit the screen.
+  8. Run `Ctrl-a` then type `:quit` to quit the screen.
 
 
 ## PPP Installation on Raspberry Pi
@@ -131,19 +131,18 @@ NB-IoT HAT offers PPP (Point-to-Point Protocol) for us to connect Raspberry Pi t
     cd /home/pi/maxis-nbiot-hackathon
     ```
 
-4. Run the commands below to install PPP on Raspberry Pi as root. You will need to enter password after command `sudo su`
+4. Run the commands below to install PPP on Raspberry Pi.
     
     ```
-    $ sudo su
     $ cd "Raspberry Pi/PPP Installer"
-    $ chmod +x install.sh
-    $ ./install.sh
+    $ sudo chmod +x install.sh
+    $ sudo ./install.sh
     ```
 
 5. Run command below to start the connection. 
 
     ```
-    pon
+    sudo systemctl start nbiot.service
     ``` 
 
 6. Run command below to check if interface ppp0 exists.
@@ -157,11 +156,10 @@ NB-IoT HAT offers PPP (Point-to-Point Protocol) for us to connect Raspberry Pi t
 8. Run command below to stop the connection. 
 
     ```
-    poff
+    sudo systemctl stop nbiot.service
     ``` 
 
-9. Automate the connection during Raspberry Pi boot-up.
-    - Run command `systemctl enable nbiot.service`.
+9. To automate the connection during Raspberry Pi boot-up, run command `sudo systemctl enable nbiot.service`. To see the effect, run `sudo reboot` to restart Raspberry Pi.
 
 
 ### References
