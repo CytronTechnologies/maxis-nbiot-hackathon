@@ -21,7 +21,7 @@ sudo pip3 install git+https://github.com/inmcm/micropyGPS.git
 
 ``` python
 import serial, sys
-from time import sleep
+from time import sleep, time
 from micropyGPS import MicropyGPS
 
 NMEA_PORT='/dev/ttyUSB1'
@@ -42,19 +42,20 @@ try:
     while True:
         try:
             with serial.Serial(NMEA_PORT, 115200, timeout=5, rtscts=True, dsrdtr=True) as ser:
-                for i in range(10):
-                    # ignore these sentences
-                    ser.readline()
-                # try to parse this line (will throw an exception if input is not valid NMEA)
-                data = ser.readline().decode()
-                for x in data:
-                    reader.update(x)
-                print("UTC_Time={}, lat={}, lng={}".format(reader.timestamp, reader.latitude_string(), reader.longitude_string()))
+                ts = 0
+                while True:
+                    # update
+                    data = ser.read().decode()
+                    reader.update(data)
+                    # read in every 2 seconds
+                    if time() - ts > 2:
+                        ts = time()
+                        print("UTC_Date={}, UTC_Time={}, lat={}, lng={}".format(reader.date_string(), reader.timestamp, reader.latitude_string(), reader.longitude_string()))
+            
         except Exception as e:
             print("Error: {}".format(str(e)))
             sleep(1)
+            
 except KeyboardInterrupt:
     sys.stderr.write('Ctrl-C pressed, exiting GNSS reader\n')
-
-        
 ```
