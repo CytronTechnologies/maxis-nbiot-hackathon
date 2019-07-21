@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/azure/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/azure/install-azure-cli-apt/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/azure/install-azure-cli-macos/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/raspberrypi/getting-started/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/raspberrypi/grovepi/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/raspberrypi/nbiot/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/raspberrypi/send_telemetry_to_azure/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/raspberrypi/gnss/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/web/node-red/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
+     <loc>https://cytrontechnologies.github.io/maxis-nbiot-hackathon/web/expressjs_ionic/</loc>
      <lastmod>2019-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
