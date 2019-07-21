@@ -13,7 +13,7 @@ $ sudo reboot
 
 ## Firmware Update (Important)
 ```c
-$ cd Dexter/Firmware
+$ cd Dexter/GrovePi/Firmware
 $ sudo chmod +x firmware_update.sh
 $ sudo bash firmware_update.sh
 ```
